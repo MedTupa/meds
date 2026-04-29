@@ -244,6 +244,38 @@ nav a.active {
     line-height: 1.45;
 }
 
+.pharmacy dd.hours {
+    font-variant-numeric: tabular-nums;
+}
+
+.pharmacy a[href^="tel:"],
+.pharmacy a[href*="google.com/maps"] {
+    color: inherit;
+    text-decoration: none;
+}
+
+.pharmacy a[href^="tel:"]:hover,
+.pharmacy a[href*="google.com/maps"]:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+}
+
+.status {
+    margin: -0.4rem 0 0.85rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-open {
+    color: var(--accent);
+}
+
+.status-closed {
+    color: var(--muted);
+    font-weight: 400;
+}
+
 footer {
     text-align: center;
     color: var(--muted);
