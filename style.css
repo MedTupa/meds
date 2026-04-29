@@ -1,0 +1,266 @@
+:root {
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --accent: #2f6f4e;
+    --accent-soft: #e6f0ea;
+    --border: #e5e7eb;
+    --warn: #b45309;
+    --warn-bg: #fef3c7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+}
+
+header {
+    background: var(--accent);
+    color: #fff;
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.subtitle {
+    margin: 0.5rem 0 0;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 1rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background: var(--accent-soft);
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent-soft);
+    padding-bottom: 0.5rem;
+}
+
+.section-note {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 1.5rem;
+}
+
+.med-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+    column-gap: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.med-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px dotted var(--border);
+    break-inside: avoid;
+    font-size: 0.95rem;
+}
+
+.med-list li:last-child {
+    border-bottom: none;
+}
+
+.landing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-link {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem 1.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card-link:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.card-link h2 {
+    margin: 0 0 0.5rem;
+    color: var(--accent);
+    border: none;
+    padding: 0;
+    font-size: 1.35rem;
+}
+
+.card-link p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+nav a.active {
+    background: var(--accent-soft);
+}
+
+.indication-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.indication {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+}
+
+.indication h3 {
+    margin: 0 0 0.75rem;
+    color: var(--accent);
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--accent-soft);
+    padding-bottom: 0.5rem;
+}
+
+.indication ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.indication li {
+    padding: 0.35rem 0;
+    border-bottom: 1px dotted var(--border);
+    font-size: 0.95rem;
+}
+
+.indication li:last-child {
+    border-bottom: none;
+}
+
+.pharmacy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+}
+
+.pharmacy {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    transition: box-shadow 0.15s ease;
+}
+
+.pharmacy:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.pharmacy h3 {
+    margin: 0 0 1rem;
+    color: var(--accent);
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.pharmacy dl {
+    margin: 0;
+}
+
+.pharmacy dt {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.85rem;
+}
+
+.pharmacy dt:first-child {
+    margin-top: 0;
+}
+
+.pharmacy dd {
+    margin: 0.2rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .med-list {
+        columns: 1;
+    }
+}
