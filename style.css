@@ -158,6 +158,42 @@ nav a.active {
     background: var(--accent-soft);
 }
 
+.med-search {
+    margin: 0 0 1.5rem;
+}
+
+.med-search input {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.med-search input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.med-empty {
+    display: none;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    margin: 0 0 1rem;
+}
+
+.med-empty.show {
+    display: block;
+}
+
 .indication-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

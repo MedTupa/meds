@@ -1,0 +1,32 @@
+(function () {
+    const input = document.querySelector('.med-search input');
+    if (!input) return;
+
+    const indications = document.querySelectorAll('.indication');
+    const empty = document.querySelector('.med-empty');
+
+    function normalize(s) {
+        return s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '');
+    }
+
+    function filter() {
+        const q = normalize(input.value.trim());
+        let anyVisible = false;
+
+        indications.forEach(card => {
+            const items = card.querySelectorAll('li');
+            let visibleCount = 0;
+            items.forEach(li => {
+                const match = q === '' || normalize(li.textContent).includes(q);
+                li.hidden = !match;
+                if (match) visibleCount++;
+            });
+            card.hidden = visibleCount === 0;
+            if (visibleCount > 0) anyVisible = true;
+        });
+
+        if (empty) empty.classList.toggle('show', !anyVisible && q !== '');
+    }
+
+    input.addEventListener('input', filter);
+})();
