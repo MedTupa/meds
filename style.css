@@ -230,12 +230,12 @@ body {
 }
 
 .btn-primary {
-    background: #fff;
-    color: var(--blue-dark);
+    background: #fbbf24;
+    color: var(--ink);
     margin-top: 0.75rem;
 }
 
-.btn-primary:hover { background: #f3f6f4; }
+.btn-primary:hover { background: #f59e0b; }
 
 .btn-white {
     background: #fff;
