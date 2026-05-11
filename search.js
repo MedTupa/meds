@@ -28,5 +28,12 @@
         if (empty) empty.classList.toggle('show', !anyVisible && q !== '');
     }
 
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get('q');
+    if (initial) {
+        input.value = initial;
+        filter();
+    }
+
     input.addEventListener('input', filter);
 })();
