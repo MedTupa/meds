@@ -333,7 +333,7 @@ body {
     gap: 0.4rem;
 }
 
-/* Feature card (Emergência / Vacinação) */
+/* Feature card */
 .feature-card {
     display: flex;
     gap: 0.9rem;
