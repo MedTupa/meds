@@ -12,9 +12,11 @@ Pushes to `main` deploy the entire repository root to GitHub Pages via `.github/
 
 ## Structure conventions
 
-Five pages (`index.html`, `medicamentos.html`, `farmacia-popular.html`, `farmacias.html`, `info.html`) share the same shell — an inline `<svg>` symbol sprite at the top, then `<div class="app">` containing `<header class="app-header">` (brand + location pin), the page body, `<footer class="app-footer">`, and a fixed `<nav class="bottom-nav">` (Início / Busca / Farmácias / Info). Mark the current tab's link with `class="active"`. The `.app` wrapper constrains layout to a mobile-width column (~460px) and pads the bottom to leave room for the fixed nav.
+Four pages (`index.html`, `busca.html`, `farmacias.html`, `info.html`) share the same shell — an inline `<svg>` symbol sprite at the top, then `<div class="app">` containing `<header class="app-header">` (brand + location pin), the page body, `<footer class="app-footer">`, and a fixed `<nav class="bottom-nav">` (Início / Busca / Farmácias / Info). Mark the current tab's link with `class="active"`. The `.app` wrapper constrains layout to a mobile-width column (~460px) and pads the bottom to leave room for the fixed nav.
 
-The footer's `Última atualização: DD/MM/YYYY` is duplicated across all five HTML files. Update them together when making content changes.
+`busca.html` is the unified medication search and contains both `Farmácia Municipal` (`#municipal`) and `Farmácia Popular` (`#popular`) program sections in `<section class="program">` blocks. The home cards anchor-link to those IDs. `search.js` filters `.indication` cards across both programs and hides any program section whose indications all get filtered out.
+
+The footer's `Última atualização: DD/MM/YYYY` is duplicated across all four HTML files. Update them together when making content changes.
 
 Icons are inline SVG `<symbol>`s with `i-*` IDs (e.g. `i-pin`, `i-clock`, `i-pharmacy`); reuse `<use href="#i-x"/>` rather than re-defining symbols. Each page only inlines the icons it uses.
 

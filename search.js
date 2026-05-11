@@ -9,6 +9,8 @@
         return s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '');
     }
 
+    const programs = document.querySelectorAll('.program');
+
     function filter() {
         const q = normalize(input.value.trim());
         let anyVisible = false;
@@ -23,6 +25,11 @@
             });
             card.hidden = visibleCount === 0;
             if (visibleCount > 0) anyVisible = true;
+        });
+
+        programs.forEach(p => {
+            const visibleIndications = p.querySelectorAll('.indication:not([hidden])');
+            p.hidden = visibleIndications.length === 0;
         });
 
         if (empty) empty.classList.toggle('show', !anyVisible && q !== '');

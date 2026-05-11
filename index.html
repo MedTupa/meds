@@ -66,6 +66,10 @@
             <line x1="5" y1="12" x2="19" y2="12"/>
             <polyline points="12 5 19 12 12 19"/>
         </symbol>
+        <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+            <circle cx="7" cy="7" r="1.5"/>
+        </symbol>
     </svg>
 
     <div class="app">
@@ -86,7 +90,7 @@
 
         <div class="layout">
             <section class="section wide">
-                <form class="card card-blue search-card" action="medicamentos.html" method="get">
+                <form class="card card-blue search-card" action="busca.html" method="get">
                     <label class="search-input" for="home-search">
                         <svg width="16" height="16" aria-hidden="true"><use href="#i-search"/></svg>
                         <input id="home-search" name="q" type="search" placeholder="Qual medicamento você está procurando?" autocomplete="off">
@@ -102,7 +106,7 @@
                     </span>
                     <h3>Farmácia Municipal</h3>
                     <p>Medicamentos gratuitos: consulte a lista oficial da prefeitura de Tupaciguara.</p>
-                    <a class="btn btn-white" href="medicamentos.html">Ver Lista</a>
+                    <a class="btn btn-white" href="busca.html#municipal">Ver Lista</a>
                 </div>
             </section>
 
@@ -113,7 +117,7 @@
                     </span>
                     <h3>Farmácia Popular</h3>
                     <p>Programa federal: remédios gratuitos para asma, diabetes e hipertensão em farmácias credenciadas.</p>
-                    <a class="btn btn-white" href="farmacia-popular.html">Consultar Benefícios</a>
+                    <a class="btn btn-white" href="busca.html#popular">Consultar Benefícios</a>
                 </div>
             </section>
 
@@ -171,10 +175,26 @@
                     </div>
                 </a>
             </section>
+
+            <section class="section wide">
+                <a class="card feature-card" href="https://medpreco.com" target="_blank" rel="noopener">
+                    <span class="icon-tile icon-amber">
+                        <svg width="20" height="20" aria-hidden="true"><use href="#i-tag"/></svg>
+                    </span>
+                    <div class="body">
+                        <h3>MedPreço</h3>
+                        <p>Veja o preço máximo que pode ser cobrado por cada medicamento.</p>
+                        <span class="more">
+                            Consultar preço
+                            <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+                        </span>
+                    </div>
+                </a>
+            </section>
         </div>
 
         <footer class="app-footer">
-            <p>Última atualização: 05/05/2026.</p>
+            <p>Última atualização: 11/05/2026.</p>
         </footer>
 
         <nav class="bottom-nav" aria-label="Navegação principal">
@@ -184,7 +204,7 @@
                 </span>
                 Início
             </a>
-            <a href="medicamentos.html">
+            <a href="busca.html">
                 <span class="nav-icon-wrap">
                     <svg width="18" height="18" aria-hidden="true"><use href="#i-search"/></svg>
                 </span>
