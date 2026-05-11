@@ -749,21 +749,21 @@ body {
     }
 
     .app {
-        max-width: 1040px;
+        max-width: 1200px;
         padding-bottom: 96px;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 
     .app-header {
-        margin-left: -1rem;
-        margin-right: -1rem;
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
         padding: 1rem 2rem;
     }
 
     .emergency-strip {
-        margin-left: -1rem;
-        margin-right: -1rem;
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
         padding: 0.6rem 2rem;
         font-size: 0.9rem;
     }
@@ -803,7 +803,8 @@ body {
         margin-top: auto;
     }
 
-    .layout > .section.wide {
+    .layout > .section.wide,
+    .layout > .section.medium {
         grid-column: 1 / -1;
     }
 
@@ -841,7 +842,7 @@ body {
 
     /* Bottom nav matches app width on desktop */
     .bottom-nav {
-        max-width: 1040px;
+        max-width: 1200px;
         border-radius: 16px 16px 0 0;
         padding-top: 0.6rem;
         padding-bottom: 0.6rem;
@@ -860,8 +861,38 @@ body {
     }
 }
 
+@media (min-width: 960px) {
+    /* 3-col landing grid: Municipal + Popular + Farmácias share a row;
+       .wide still spans full width, .medium reverts to a single cell */
+    .layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .layout > .section.medium {
+        grid-column: auto;
+    }
+}
+
 @media (min-width: 1100px) {
     .indication-list {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pharmacy-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .app {
+        max-width: 1320px;
+    }
+
+    .bottom-nav {
+        max-width: 1320px;
+    }
+
+    .indication-list {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
