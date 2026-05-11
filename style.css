@@ -94,6 +94,33 @@ body {
     cursor: pointer;
 }
 
+/* ===== Emergency strip ===== */
+.emergency-strip {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--red-soft);
+    color: var(--red);
+    padding: 0.55rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(220, 38, 38, 0.14);
+}
+
+.emergency-strip .label {
+    flex: 1;
+    min-width: 0;
+}
+
+.emergency-strip strong {
+    font-weight: 700;
+}
+
+.emergency-strip:hover {
+    background: #fbd0d0;
+}
+
 /* ===== Greeting ===== */
 .greeting {
     padding: 1.5rem 1.25rem 0.75rem;
@@ -187,6 +214,11 @@ body {
     color: #fff;
 }
 
+.card-navy {
+    background: var(--blue-darker);
+    color: #fff;
+}
+
 /* Search card (blue) */
 .search-card .search-input {
     display: flex;
@@ -245,6 +277,7 @@ body {
 
 .card-blue .btn-white { color: var(--blue-dark); }
 .card-green .btn-white { color: var(--green); }
+.card-navy .btn-white { color: var(--blue-darker); }
 
 .btn-white:hover { background: #f3f6f4; }
 
@@ -275,62 +308,6 @@ body {
     font-size: 0.88rem;
     line-height: 1.5;
     opacity: 0.92;
-}
-
-/* Pharmacy preview card */
-.pharmacy-preview {
-    padding: 0;
-    overflow: hidden;
-}
-
-.pharmacy-preview .image-area {
-    aspect-ratio: 16 / 9;
-    background: linear-gradient(135deg, #2d7a4f 0%, #1e4d8b 100%);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.pharmacy-preview .image-area::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(120% 80% at 50% 100%, rgba(0,0,0,0.25), transparent 60%);
-    pointer-events: none;
-}
-
-.pharmacy-preview .image-area svg {
-    width: 56px;
-    height: 56px;
-    position: relative;
-    z-index: 1;
-}
-
-.pharmacy-preview .info {
-    padding: 0.9rem 1.1rem 1.1rem;
-}
-
-.pharmacy-preview h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--ink);
-}
-
-.pharmacy-preview .meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    font-size: 0.85rem;
-    color: var(--muted);
-}
-
-.pharmacy-preview .meta span {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
 }
 
 /* Feature card */
@@ -401,6 +378,36 @@ body {
 }
 
 .feature-card .more:hover { text-decoration: underline; }
+
+/* Compact feature card — single-row link style for lower-tier shortcuts */
+.feature-card.compact {
+    align-items: center;
+    padding: 0.8rem 1.1rem;
+    gap: 0.75rem;
+}
+
+.feature-card.compact .icon-tile {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+}
+
+.feature-card.compact h3 {
+    margin: 0;
+    font-size: 0.92rem;
+}
+
+.feature-card.compact p {
+    margin: 0.1rem 0 0;
+    font-size: 0.8rem;
+}
+
+.feature-card.compact .trailing {
+    color: var(--muted-2);
+    flex-shrink: 0;
+}
+
+.feature-card.compact:hover .trailing { color: var(--blue); }
 
 /* Stack cards vertically with gap */
 .stack {
@@ -752,6 +759,13 @@ body {
         margin-left: -1rem;
         margin-right: -1rem;
         padding: 1rem 2rem;
+    }
+
+    .emergency-strip {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding: 0.6rem 2rem;
+        font-size: 0.9rem;
     }
 
     .greeting {

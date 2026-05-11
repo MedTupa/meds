@@ -75,6 +75,12 @@
             </button>
         </header>
 
+        <a class="emergency-strip" href="info.html#emergencia">
+            <svg width="16" height="16" aria-hidden="true"><use href="#i-asterisk"/></svg>
+            <span class="label"><strong>Emergência:</strong> Pronto Socorro Municipal</span>
+            <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        </a>
+
         <section class="greeting">
             <h1>Olá, morador de Tupaciguara</h1>
             <p>Encontre medicamentos e serviços de saúde perto de você.</p>
@@ -114,57 +120,26 @@
             </section>
 
             <section class="section wide">
-                <div class="section-header">
-                    <h2>
-                        <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#i-pharmacy"/></svg>
-                        Farmácias
-                    </h2>
-                    <span class="badge" id="open-badge" hidden>Aberto Agora</span>
+                <div class="card card-navy info-card">
+                    <span class="icon-wrap">
+                        <svg width="34" height="34" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                    </span>
+                    <h3>Farmácias Abertas</h3>
+                    <p id="open-now-desc">Veja endereços, telefones e horários das farmácias da cidade.</p>
+                    <a class="btn btn-white" href="farmacias.html">Ver Farmácias</a>
                 </div>
-                <a class="card feature-card" href="farmacias.html">
-                    <span class="icon-tile icon-green">
-                        <svg width="20" height="20" aria-hidden="true"><use href="#i-pharmacy"/></svg>
-                    </span>
-                    <div class="body">
-                        <h3 id="open-now-title">Lista de farmácias</h3>
-                        <p>Endereços, telefones e horários das farmácias da cidade.</p>
-                        <span class="more">
-                            Ver todas
-                            <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                        </span>
-                    </div>
-                </a>
             </section>
 
-            <section class="section">
-                <a class="card feature-card" href="info.html#emergencia">
-                    <span class="icon-tile icon-red">
-                        <svg width="20" height="20" aria-hidden="true"><use href="#i-asterisk"/></svg>
-                    </span>
-                    <div class="body">
-                        <h3>Emergência e Saúde</h3>
-                        <p>Em caso de urgência, procure o Pronto Socorro Municipal.</p>
-                        <span class="more">
-                            Ver endereços úteis
-                            <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                        </span>
-                    </div>
-                </a>
-            </section>
-
-            <section class="section">
-                <a class="card feature-card" href="https://medpreco.com" target="_blank" rel="noopener">
+            <section class="section wide">
+                <a class="card feature-card compact" href="https://medpreco.com" target="_blank" rel="noopener">
                     <span class="icon-tile icon-amber">
-                        <svg width="20" height="20" aria-hidden="true"><use href="#i-tag"/></svg>
+                        <svg width="18" height="18" aria-hidden="true"><use href="#i-tag"/></svg>
                     </span>
                     <div class="body">
                         <h3>MedPreço</h3>
-                        <p>Veja o preço máximo que pode ser cobrado por cada medicamento.</p>
-                        <span class="more">
-                            Consultar preço
-                            <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                        </span>
+                        <p>Consulte o preço máximo de cada medicamento.</p>
                     </div>
+                    <svg class="trailing" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
                 </a>
             </section>
         </div>
@@ -235,16 +210,15 @@
             };
 
             const count = HOURS.filter(isOpen).length;
-            const title = document.getElementById('open-now-title');
-            const badge = document.getElementById('open-badge');
+            const desc = document.getElementById('open-now-desc');
+            if (!desc) return;
 
-            if (title) {
-                if (count === 0) title.textContent = 'Nenhuma farmácia aberta agora';
-                else if (count === 1) title.textContent = '1 farmácia aberta agora';
-                else title.textContent = count + ' farmácias abertas agora';
-            }
-            if (badge) {
-                if (count > 0) badge.hidden = false;
+            if (count === 0) {
+                desc.textContent = 'Nenhuma farmácia atendendo no momento. Veja horários e telefones.';
+            } else if (count === 1) {
+                desc.textContent = '1 farmácia atendendo agora. Veja endereços, telefones e horários.';
+            } else {
+                desc.textContent = count + ' farmácias atendendo agora. Veja endereços, telefones e horários.';
             }
         })();
     </script>
