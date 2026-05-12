@@ -13,21 +13,9 @@
             <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/>
             <circle cx="12" cy="10" r="3"/>
         </symbol>
-        <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-        </symbol>
         <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <polyline points="12 6 12 12 16 14"/>
-        </symbol>
-        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-        </symbol>
-        <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 18H3c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h10c.55 0 1 .45 1 1v11"/>
-            <path d="M14 9h4l4 4v4c0 .55-.45 1-1 1h-2"/>
-            <circle cx="7" cy="18" r="2"/>
-            <circle cx="17" cy="18" r="2"/>
         </symbol>
         <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="7"/>
@@ -47,6 +35,18 @@
             <line x1="12" y1="11" x2="12" y2="17"/>
             <line x1="12" y1="7.5" x2="12" y2="7.6"/>
         </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+        </symbol>
+        <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 18H3c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h10c.55 0 1 .45 1 1v11"/>
+            <path d="M14 9h4l4 4v4c0 .55-.45 1-1 1h-2"/>
+            <circle cx="7" cy="18" r="2"/>
+            <circle cx="17" cy="18" r="2"/>
+        </symbol>
+        <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.05 4.92A10.4 10.4 0 0 0 12 2C6.5 2 2.02 6.48 2.02 12c0 1.76.46 3.48 1.34 5L2 22l5.13-1.34A10 10 0 0 0 12 22c5.52 0 10-4.48 10-10 0-2.67-1.04-5.18-2.95-7.08zM12 20.15c-1.49 0-2.95-.4-4.21-1.16l-.3-.18-3.13.82.83-3.05-.2-.31A8.13 8.13 0 0 1 3.85 12 8.16 8.16 0 0 1 12 3.85a8.13 8.13 0 0 1 8.15 8.15A8.16 8.16 0 0 1 12 20.15zm4.47-6.11c-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.17.24-.63.8-.78.97-.14.16-.29.18-.53.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.44-1.36-1.68-.14-.24-.02-.37.11-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.85.83-.85 2.02s.87 2.35 1 2.51c.12.16 1.71 2.6 4.13 3.65.58.25 1.03.4 1.38.51.58.18 1.11.16 1.52.1.46-.07 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/>
+        </symbol>
     </svg>
 
     <div class="app">
@@ -61,15 +61,32 @@
         </header>
 
         <section class="page-title">
-            <h1>Farmácias Locais</h1>
-            <p>Telefones, endereços e horários das farmácias de Tupaciguara.</p>
+            <h1>Farmácias em Tupaciguara</h1>
+            <p>Veja todas as farmácias da cidade, com horários e contato em tempo real.</p>
         </section>
 
         <section class="section">
+            <div class="med-search">
+                <label class="search-input">
+                    <svg width="16" height="16" aria-hidden="true"><use href="#i-search"/></svg>
+                    <input type="search" id="pharmacy-filter" placeholder="Buscar por nome ou bairro" autocomplete="off">
+                </label>
+            </div>
+            <p class="med-empty" id="pharmacy-empty">Nenhuma farmácia encontrada.</p>
+
             <div class="pharmacy-grid">
 
-                <article class="pharmacy" data-mon-fri="07:00-22:00" data-sat="07:00-22:00" data-sun="08:00-20:00">
-                    <h3>Drogaria do Povo I</h3>
+                <article class="pharmacy-card" data-mon-fri="07:00-22:00" data-sat="07:00-22:00" data-sun="08:00-20:00" data-name="Drogaria do Povo I" data-bairro="São Cristóvão">
+                    <header class="pharmacy-head">
+                        <div class="pharmacy-icon">
+                            <svg width="22" height="22" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                        </div>
+                        <div class="pharmacy-head-text">
+                            <h3>Drogaria do Povo I</h3>
+                            <p class="pharmacy-address">Rua Bueno Brandão, 244 — São Cristóvão</p>
+                        </div>
+                        <span class="pharmacy-status" data-status></span>
+                    </header>
                     <div class="pharmacy-tags">
                         <span class="tag">
                             <svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg>
@@ -80,51 +97,66 @@
                             Entrega · mín R$ 15
                         </span>
                     </div>
-                    <div class="field field-address">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Bueno+Brand%C3%A3o,+244,+S%C3%A3o+Crist%C3%B3v%C3%A3o,+Tupaciguara,+MG" target="_blank" rel="noopener">Rua Bueno Brandão, nº 244 — Bairro São Cristóvão</a>
-                    </div>
-                    <div class="field field-phone">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
-                        <a href="tel:+553432812510">(34) 3281-2510</a>
-                    </div>
-                    <div class="field field-hours">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-clock"/></svg>
-                        <div class="hours-grid">
-                            <span class="day">Seg–Sex</span><span>07:00 — 22:00</span>
-                            <span class="day">Sáb</span><span>07:00 — 22:00</span>
-                            <span class="day">Dom</span><span>08:00 — 20:00</span>
-                        </div>
+                    <p class="pharmacy-hours-summary">
+                        <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                        <span data-hours-text></span>
+                    </p>
+                    <div class="pharmacy-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/553432812510" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            WhatsApp
+                        </a>
+                        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Bueno+Brand%C3%A3o,+244,+S%C3%A3o+Crist%C3%B3v%C3%A3o,+Tupaciguara,+MG" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
+                            Ver Mapa
+                        </a>
                     </div>
                 </article>
 
-                <article class="pharmacy" data-mon-fri="08:00-20:00" data-sat="08:00-20:00" data-sun="closed">
-                    <h3>Drogamed</h3>
+                <article class="pharmacy-card" data-mon-fri="08:00-20:00" data-sat="08:00-20:00" data-sun="closed" data-name="Drogamed" data-bairro="Tiradentes">
+                    <header class="pharmacy-head">
+                        <div class="pharmacy-icon">
+                            <svg width="22" height="22" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                        </div>
+                        <div class="pharmacy-head-text">
+                            <h3>Drogamed</h3>
+                            <p class="pharmacy-address">Rua Adilon de Araújo, 61 — Tiradentes</p>
+                        </div>
+                        <span class="pharmacy-status" data-status></span>
+                    </header>
                     <div class="pharmacy-tags">
                         <span class="tag">
                             <svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-truck"/></svg>
                             Entrega · mín R$ 15
                         </span>
                     </div>
-                    <div class="field field-address">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Adilon+de+Ara%C3%BAjo,+61,+Tiradentes,+Tupaciguara,+MG" target="_blank" rel="noopener">Rua Adilon de Araújo, 61 — Bairro Tiradentes</a>
-                    </div>
-                    <div class="field field-phone">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
-                        <a href="tel:+5534998871763">(34) 99887-1763</a>
-                    </div>
-                    <div class="field field-hours">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-clock"/></svg>
-                        <div class="hours-grid">
-                            <span class="day">Seg–Sáb</span><span>08:00 — 20:00</span>
-                            <span class="day">Dom</span><span class="closed">fechado</span>
-                        </div>
+                    <p class="pharmacy-hours-summary">
+                        <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                        <span data-hours-text></span>
+                    </p>
+                    <div class="pharmacy-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/5534998871763" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            WhatsApp
+                        </a>
+                        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Adilon+de+Ara%C3%BAjo,+61,+Tiradentes,+Tupaciguara,+MG" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
+                            Ver Mapa
+                        </a>
                     </div>
                 </article>
 
-                <article class="pharmacy" data-mon-fri="07:00-22:00" data-sat="07:00-21:00" data-sun="08:00-19:00">
-                    <h3>Farmácia Americanas</h3>
+                <article class="pharmacy-card" data-mon-fri="07:00-22:00" data-sat="07:00-21:00" data-sun="08:00-19:00" data-name="Farmácia Americanas" data-bairro="São Cristóvão">
+                    <header class="pharmacy-head">
+                        <div class="pharmacy-icon">
+                            <svg width="22" height="22" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                        </div>
+                        <div class="pharmacy-head-text">
+                            <h3>Farmácia Americanas</h3>
+                            <p class="pharmacy-address">Rua Bueno Brandão, 178 — São Cristóvão</p>
+                        </div>
+                        <span class="pharmacy-status" data-status></span>
+                    </header>
                     <div class="pharmacy-tags">
                         <span class="tag">
                             <svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg>
@@ -135,26 +167,33 @@
                             Entrega · mín R$ 10
                         </span>
                     </div>
-                    <div class="field field-address">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Bueno+Brand%C3%A3o,+178,+S%C3%A3o+Crist%C3%B3v%C3%A3o,+Tupaciguara,+MG" target="_blank" rel="noopener">Rua Bueno Brandão, 178 — Bairro São Cristóvão</a>
-                    </div>
-                    <div class="field field-phone">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
-                        <a href="tel:+5534998661080">(34) 9 9866-1080</a>
-                    </div>
-                    <div class="field field-hours">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-clock"/></svg>
-                        <div class="hours-grid">
-                            <span class="day">Seg–Sex</span><span>07:00 — 22:00</span>
-                            <span class="day">Sáb</span><span>07:00 — 21:00</span>
-                            <span class="day">Dom</span><span>08:00 — 19:00</span>
-                        </div>
+                    <p class="pharmacy-hours-summary">
+                        <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                        <span data-hours-text></span>
+                    </p>
+                    <div class="pharmacy-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/5534998661080" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            WhatsApp
+                        </a>
+                        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Bueno+Brand%C3%A3o,+178,+S%C3%A3o+Crist%C3%B3v%C3%A3o,+Tupaciguara,+MG" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
+                            Ver Mapa
+                        </a>
                     </div>
                 </article>
 
-                <article class="pharmacy" data-mon-fri="08:00-20:00" data-sat="08:00-20:00" data-sun="closed">
-                    <h3>Farmaguti</h3>
+                <article class="pharmacy-card" data-mon-fri="08:00-20:00" data-sat="08:00-20:00" data-sun="closed" data-name="Farmaguti" data-bairro="Tiradentes">
+                    <header class="pharmacy-head">
+                        <div class="pharmacy-icon">
+                            <svg width="22" height="22" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                        </div>
+                        <div class="pharmacy-head-text">
+                            <h3>Farmaguti</h3>
+                            <p class="pharmacy-address">R. José da Cruz Bodega, 222 — Tiradentes</p>
+                        </div>
+                        <span class="pharmacy-status" data-status></span>
+                    </header>
                     <div class="pharmacy-tags">
                         <span class="tag">
                             <svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg>
@@ -165,25 +204,33 @@
                             Entrega · mín R$ 15
                         </span>
                     </div>
-                    <div class="field field-address">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Jos%C3%A9+da+Cruz+Bodega,+222,+Tiradentes,+Tupaciguara,+MG" target="_blank" rel="noopener">R. José da Cruz Bodega, 222 — Bairro Tiradentes</a>
-                    </div>
-                    <div class="field field-phone">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
-                        <a href="tel:+5534996396317">(34) 99639-6317</a>
-                    </div>
-                    <div class="field field-hours">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-clock"/></svg>
-                        <div class="hours-grid">
-                            <span class="day">Seg–Sáb</span><span>08:00 — 20:00</span>
-                            <span class="day">Dom</span><span class="closed">fechado</span>
-                        </div>
+                    <p class="pharmacy-hours-summary">
+                        <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                        <span data-hours-text></span>
+                    </p>
+                    <div class="pharmacy-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/5534996396317" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            WhatsApp
+                        </a>
+                        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Jos%C3%A9+da+Cruz+Bodega,+222,+Tiradentes,+Tupaciguara,+MG" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
+                            Ver Mapa
+                        </a>
                     </div>
                 </article>
 
-                <article class="pharmacy" data-mon-fri="08:00-21:00" data-sat="08:00-21:00" data-sun="08:30-12:30">
-                    <h3>Drogaria Nova Esperança</h3>
+                <article class="pharmacy-card" data-mon-fri="08:00-21:00" data-sat="08:00-21:00" data-sun="08:30-12:30" data-name="Drogaria Nova Esperança" data-bairro="Nova Esperança">
+                    <header class="pharmacy-head">
+                        <div class="pharmacy-icon">
+                            <svg width="22" height="22" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                        </div>
+                        <div class="pharmacy-head-text">
+                            <h3>Drogaria Nova Esperança</h3>
+                            <p class="pharmacy-address">Av. José da Cruz, 261 — Nova Esperança</p>
+                        </div>
+                        <span class="pharmacy-status" data-status></span>
+                    </header>
                     <div class="pharmacy-tags">
                         <span class="tag">
                             <svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg>
@@ -194,25 +241,33 @@
                             Entrega sem mínimo · R$ 5 longe
                         </span>
                     </div>
-                    <div class="field field-address">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+Jos%C3%A9+da+Cruz,+261,+Nova+Esperan%C3%A7a,+Tupaciguara,+MG" target="_blank" rel="noopener">Av. José da Cruz, 261 — Bairro Nova Esperança</a>
-                    </div>
-                    <div class="field field-phone">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
-                        <a href="tel:+553432894444">(34) 3289-4444</a>
-                    </div>
-                    <div class="field field-hours">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-clock"/></svg>
-                        <div class="hours-grid">
-                            <span class="day">Seg–Sáb</span><span>08:00 — 21:00</span>
-                            <span class="day">Dom</span><span>08:30 — 12:30</span>
-                        </div>
+                    <p class="pharmacy-hours-summary">
+                        <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                        <span data-hours-text></span>
+                    </p>
+                    <div class="pharmacy-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/553432894444" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            WhatsApp
+                        </a>
+                        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+Jos%C3%A9+da+Cruz,+261,+Nova+Esperan%C3%A7a,+Tupaciguara,+MG" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
+                            Ver Mapa
+                        </a>
                     </div>
                 </article>
 
-                <article class="pharmacy" data-mon-fri="08:00-18:00" data-sat="08:00-12:00" data-sun="closed">
-                    <h3>Phormula</h3>
+                <article class="pharmacy-card" data-mon-fri="08:00-18:00" data-sat="08:00-12:00" data-sun="closed" data-name="Phormula" data-bairro="Paineras">
+                    <header class="pharmacy-head">
+                        <div class="pharmacy-icon">
+                            <svg width="22" height="22" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                        </div>
+                        <div class="pharmacy-head-text">
+                            <h3>Phormula</h3>
+                            <p class="pharmacy-address">Av. JK, 124 — Paineras</p>
+                        </div>
+                        <span class="pharmacy-status" data-status></span>
+                    </header>
                     <div class="pharmacy-tags">
                         <span class="tag">
                             <svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg>
@@ -223,52 +278,66 @@
                             Entrega · mín R$ 10
                         </span>
                     </div>
-                    <div class="field field-address">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+JK,+124,+Paineras,+Tupaciguara,+MG" target="_blank" rel="noopener">Av. JK, 124 — Bairro Paineras</a>
-                    </div>
-                    <div class="field field-phone">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
-                        <a href="tel:+553432815444">(34) 3281-5444</a>
-                    </div>
-                    <div class="field field-hours">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-clock"/></svg>
-                        <div class="hours-grid">
-                            <span class="day">Seg–Sex</span><span>08:00 — 18:00</span>
-                            <span class="day">Sáb</span><span>08:00 — 12:00</span>
-                            <span class="day">Dom</span><span class="closed">fechado</span>
-                        </div>
+                    <p class="pharmacy-hours-summary">
+                        <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                        <span data-hours-text></span>
+                    </p>
+                    <div class="pharmacy-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/553432815444" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            WhatsApp
+                        </a>
+                        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+JK,+124,+Paineras,+Tupaciguara,+MG" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
+                            Ver Mapa
+                        </a>
                     </div>
                 </article>
 
-                <article class="pharmacy" data-mon-fri="08:00-20:00" data-sat="08:00-19:00" data-sun="closed">
-                    <h3>Drogaria UltraPopular</h3>
+                <article class="pharmacy-card" data-mon-fri="08:00-20:00" data-sat="08:00-19:00" data-sun="closed" data-name="Drogaria UltraPopular" data-bairro="Centro">
+                    <header class="pharmacy-head">
+                        <div class="pharmacy-icon">
+                            <svg width="22" height="22" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                        </div>
+                        <div class="pharmacy-head-text">
+                            <h3>Drogaria UltraPopular</h3>
+                            <p class="pharmacy-address">Rua Bueno Brandão, 137 — Centro</p>
+                        </div>
+                        <span class="pharmacy-status" data-status></span>
+                    </header>
                     <div class="pharmacy-tags">
                         <span class="tag">
                             <svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-truck"/></svg>
                             Entrega grátis acima de R$ 60 · R$ 4 abaixo
                         </span>
                     </div>
-                    <div class="field field-address">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Bueno+Brand%C3%A3o,+137,+Centro,+Tupaciguara,+MG" target="_blank" rel="noopener">Rua Bueno Brandão, 137 — Centro</a>
-                    </div>
-                    <div class="field field-phone">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
-                        <a href="tel:+553432360014">(34) 3236-0014</a>
-                    </div>
-                    <div class="field field-hours">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-clock"/></svg>
-                        <div class="hours-grid">
-                            <span class="day">Seg–Sex</span><span>08:00 — 20:00</span>
-                            <span class="day">Sáb</span><span>08:00 — 19:00</span>
-                            <span class="day">Dom</span><span class="closed">fechado</span>
-                        </div>
+                    <p class="pharmacy-hours-summary">
+                        <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                        <span data-hours-text></span>
+                    </p>
+                    <div class="pharmacy-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/553432360014" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            WhatsApp
+                        </a>
+                        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Bueno+Brand%C3%A3o,+137,+Centro,+Tupaciguara,+MG" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
+                            Ver Mapa
+                        </a>
                     </div>
                 </article>
 
-                <article class="pharmacy" data-mon-fri="08:00-20:00" data-sat="08:00-20:00" data-sun="closed">
-                    <h3>Drogaria Vida</h3>
+                <article class="pharmacy-card" data-mon-fri="08:00-20:00" data-sat="08:00-20:00" data-sun="closed" data-name="Drogaria Vida" data-bairro="Centro">
+                    <header class="pharmacy-head">
+                        <div class="pharmacy-icon">
+                            <svg width="22" height="22" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                        </div>
+                        <div class="pharmacy-head-text">
+                            <h3>Drogaria Vida</h3>
+                            <p class="pharmacy-address">Rua José Ferreira Marques, 18 — Centro</p>
+                        </div>
+                        <span class="pharmacy-status" data-status></span>
+                    </header>
                     <div class="pharmacy-tags">
                         <span class="tag">
                             <svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg>
@@ -279,25 +348,33 @@
                             Entrega · mín R$ 15
                         </span>
                     </div>
-                    <div class="field field-address">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Jos%C3%A9+Ferreira+Marques,+18,+Centro,+Tupaciguara,+MG" target="_blank" rel="noopener">Rua José Ferreira Marques, 18 — Centro</a>
-                    </div>
-                    <div class="field field-phone">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
-                        <a href="tel:+553432816096">(34) 3281-6096</a>
-                    </div>
-                    <div class="field field-hours">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-clock"/></svg>
-                        <div class="hours-grid">
-                            <span class="day">Seg–Sáb</span><span>08:00 — 20:00</span>
-                            <span class="day">Dom</span><span class="closed">fechado</span>
-                        </div>
+                    <p class="pharmacy-hours-summary">
+                        <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                        <span data-hours-text></span>
+                    </p>
+                    <div class="pharmacy-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/553432816096" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            WhatsApp
+                        </a>
+                        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Jos%C3%A9+Ferreira+Marques,+18,+Centro,+Tupaciguara,+MG" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
+                            Ver Mapa
+                        </a>
                     </div>
                 </article>
 
-                <article class="pharmacy" data-mon-fri="07:00-21:00" data-sat="07:00-21:00" data-sun="closed">
-                    <h3>Drogaria do Povo III</h3>
+                <article class="pharmacy-card" data-mon-fri="07:00-21:00" data-sat="07:00-21:00" data-sun="closed" data-name="Drogaria do Povo III" data-bairro="Centro">
+                    <header class="pharmacy-head">
+                        <div class="pharmacy-icon">
+                            <svg width="22" height="22" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                        </div>
+                        <div class="pharmacy-head-text">
+                            <h3>Drogaria do Povo III</h3>
+                            <p class="pharmacy-address">Rua Bueno Brandão, 91A — Centro</p>
+                        </div>
+                        <span class="pharmacy-status" data-status></span>
+                    </header>
                     <div class="pharmacy-tags">
                         <span class="tag">
                             <svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg>
@@ -308,20 +385,19 @@
                             Entrega · mín R$ 15
                         </span>
                     </div>
-                    <div class="field field-address">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Bueno+Brand%C3%A3o,+91A,+Centro,+Tupaciguara,+MG" target="_blank" rel="noopener">Rua Bueno Brandão, 91A — Centro</a>
-                    </div>
-                    <div class="field field-phone">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
-                        <a href="tel:+5534996772202">(34) 99677-2202</a>
-                    </div>
-                    <div class="field field-hours">
-                        <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-clock"/></svg>
-                        <div class="hours-grid">
-                            <span class="day">Seg–Sáb</span><span>07:00 — 21:00</span>
-                            <span class="day">Dom</span><span class="closed">fechado</span>
-                        </div>
+                    <p class="pharmacy-hours-summary">
+                        <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                        <span data-hours-text></span>
+                    </p>
+                    <div class="pharmacy-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/5534996772202" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            WhatsApp
+                        </a>
+                        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Bueno+Brand%C3%A3o,+91A,+Centro,+Tupaciguara,+MG" target="_blank" rel="noopener">
+                            <svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg>
+                            Ver Mapa
+                        </a>
                     </div>
                 </article>
 
@@ -363,7 +439,7 @@
 
     <script>
         (function () {
-            const dayLabel = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
+            const dayLabel = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
 
             function hoursForDay(el, day) {
                 if (day === 0) return el.dataset.sun;
@@ -387,10 +463,10 @@
                     const openM = parseMins(openStr);
                     const closeM = parseMins(closeStr);
                     if (mins >= openM && mins < closeM) {
-                        return { open: true, text: `Aberta agora · fecha às ${closeStr}` };
+                        return { open: true, label: 'Aberto', text: `Fecha às ${closeStr}` };
                     }
                     if (mins < openM) {
-                        return { open: false, text: `Fechada · abre hoje ${openStr}` };
+                        return { open: false, label: 'Fechado', text: `Abre hoje às ${openStr}` };
                     }
                 }
 
@@ -399,20 +475,40 @@
                     const nextHours = hoursForDay(el, nextDay);
                     if (nextHours && nextHours !== 'closed') {
                         const [openStr] = nextHours.split('-');
-                        const label = i === 1 ? 'amanhã' : dayLabel[nextDay];
-                        return { open: false, text: `Fechada · abre ${label} ${openStr}` };
+                        const when = i === 1 ? 'amanhã' : dayLabel[nextDay];
+                        return { open: false, label: 'Fechado', text: `Abre ${when} às ${openStr}` };
                     }
                 }
-                return { open: false, text: 'Fechada' };
+                return { open: false, label: 'Fechado', text: 'Sem horário disponível' };
             }
 
-            document.querySelectorAll('.pharmacy').forEach(el => {
+            document.querySelectorAll('.pharmacy-card').forEach(el => {
                 const s = status(el);
-                const p = document.createElement('p');
-                p.className = 'status ' + (s.open ? 'status-open' : 'status-closed');
-                p.textContent = s.text;
-                el.querySelector('h3').insertAdjacentElement('afterend', p);
+                const pill = el.querySelector('[data-status]');
+                if (pill) {
+                    pill.textContent = s.label;
+                    pill.classList.add(s.open ? 'is-open' : 'is-closed');
+                }
+                const hoursText = el.querySelector('[data-hours-text]');
+                if (hoursText) hoursText.textContent = s.text;
             });
+
+            const input = document.getElementById('pharmacy-filter');
+            const empty = document.getElementById('pharmacy-empty');
+            if (input) {
+                input.addEventListener('input', () => {
+                    const q = input.value.toLowerCase().trim();
+                    let visible = 0;
+                    document.querySelectorAll('.pharmacy-card').forEach(el => {
+                        const name = (el.dataset.name || '').toLowerCase();
+                        const bairro = (el.dataset.bairro || '').toLowerCase();
+                        const match = !q || name.includes(q) || bairro.includes(q);
+                        el.style.display = match ? '' : 'none';
+                        if (match) visible++;
+                    });
+                    if (empty) empty.classList.toggle('show', visible === 0);
+                });
+            }
         })();
     </script>
 </body>

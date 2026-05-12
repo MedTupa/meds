@@ -901,6 +901,140 @@ body {
     background: var(--border-soft);
 }
 
+/* ===== Pharmacy card (farmacias.html) ===== */
+.pharmacy-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1.15rem;
+}
+
+.pharmacy-head {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    gap: 0.85rem;
+    align-items: start;
+}
+
+.pharmacy-head .pharmacy-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-tile);
+    background: var(--blue-light);
+    color: var(--blue);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pharmacy-head .pharmacy-head-text { min-width: 0; }
+
+.pharmacy-card h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.pharmacy-card .pharmacy-address {
+    margin: 0.25rem 0 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+.pharmacy-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.pharmacy-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.pharmacy-status.is-open {
+    background: var(--green-mint);
+    color: var(--green-dark);
+}
+
+.pharmacy-status.is-closed {
+    background: var(--red-soft);
+    color: var(--red);
+}
+
+.pharmacy-card .pharmacy-tags {
+    margin: 0.85rem 0 0;
+}
+
+.pharmacy-hours-summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.85rem 0 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.pharmacy-hours-summary svg { flex-shrink: 0; }
+
+.pharmacy-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.btn-whatsapp,
+.btn-map {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    width: 100%;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.btn-whatsapp {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+}
+
+.btn-whatsapp:hover { background: var(--blue-dark); }
+
+.btn-map {
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--border);
+}
+
+.btn-map:hover {
+    background: var(--bg);
+    border-color: var(--muted-2);
+}
+
 /* ===== Desktop (>= 760px) ===== */
 @media (min-width: 760px) {
     body {
