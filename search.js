@@ -32,7 +32,17 @@
             p.hidden = visibleIndications.length === 0;
         });
 
-        if (empty) empty.classList.toggle('show', !anyVisible && q !== '');
+        if (empty) {
+            const show = !anyVisible && q !== '';
+            empty.classList.toggle('show', show);
+            if (show) {
+                const raw = input.value.trim();
+                const termEl = empty.querySelector('#empty-term');
+                if (termEl) termEl.textContent = raw;
+                const link = empty.querySelector('#medpreco-link');
+                if (link) link.href = 'https://medpreco.com/?q=' + encodeURIComponent(raw);
+            }
+        }
     }
 
     const params = new URLSearchParams(window.location.search);

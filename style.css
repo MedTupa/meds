@@ -689,17 +689,44 @@ body {
 
 .med-empty {
     display: none;
-    color: var(--muted);
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 1rem 1.1rem;
+    border-radius: var(--radius);
+    padding: 1.5rem 1.25rem;
     text-align: center;
-    margin: 0 0 1rem;
-    font-size: 0.9rem;
+    margin: 0 0 1.5rem;
 }
 
 .med-empty.show { display: block; }
+
+.med-empty .empty-title {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.med-empty .empty-help {
+    margin: 0 auto 1rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    max-width: 32rem;
+}
+
+.med-empty .empty-help strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.med-empty .empty-cta {
+    width: auto;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+}
 
 .program {
     margin: 1.5rem 0 0;
@@ -1086,8 +1113,11 @@ body {
 
     .layout > .plantao-section { grid-column: 1; }
 
+    .layout > .medpreco-section { grid-column: 1; }
+
     .layout > .right-stack {
         grid-column: 2;
+        grid-row: 2 / span 2;
         display: flex;
         flex-direction: column;
         gap: 1rem;

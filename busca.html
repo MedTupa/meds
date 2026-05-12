@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
     <title>Buscar medicamentos — MedTupa</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -40,6 +41,10 @@
             <path d="M3 10.5 12 3l9 7.5"/>
             <path d="M5 9.5V21h14V9.5"/>
         </symbol>
+        <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+            <circle cx="7" cy="7" r="1.5"/>
+        </symbol>
         <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <line x1="12" y1="11" x2="12" y2="17"/>
@@ -70,7 +75,14 @@
                     <input id="med-search" type="search" placeholder="Buscar medicamento..." aria-label="Buscar medicamento" autocomplete="off">
                 </label>
             </div>
-            <p class="med-empty">Nenhum medicamento encontrado.</p>
+            <div class="med-empty" role="status">
+                <p class="empty-title">Nenhum medicamento encontrado</p>
+                <p class="empty-help">Esse remédio não consta nas listas da Farmácia Municipal nem da Popular. Consulte o preço de venda de <strong id="empty-term"></strong> no MedPreço.</p>
+                <a class="btn btn-primary empty-cta" id="medpreco-link" href="https://medpreco.com" target="_blank" rel="noopener">
+                    <svg width="16" height="16" aria-hidden="true"><use href="#i-tag"/></svg>
+                    Consultar no MedPreço
+                </a>
+            </div>
 
             <section class="program" id="municipal">
                 <div class="program-header">
