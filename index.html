@@ -40,12 +40,7 @@
             <circle cx="12" cy="12" r="10"/>
             <polyline points="12 6 12 12 16 14"/>
         </symbol>
-        <symbol id="i-asterisk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="4" x2="12" y2="20"/>
-            <line x1="4.93" y1="7.5" x2="19.07" y2="16.5"/>
-            <line x1="4.93" y1="16.5" x2="19.07" y2="7.5"/>
-        </symbol>
-        <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 10.5 12 3l9 7.5"/>
             <path d="M5 9.5V21h14V9.5"/>
         </symbol>
@@ -75,19 +70,13 @@
             </button>
         </header>
 
-        <a class="emergency-strip" href="info.html#emergencia">
-            <svg width="16" height="16" aria-hidden="true"><use href="#i-asterisk"/></svg>
-            <span class="label"><strong>Emergência:</strong> Pronto Socorro Municipal</span>
-            <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-        </a>
-
         <section class="greeting">
-            <h1>Olá, morador de Tupaciguara</h1>
-            <p>Encontre medicamentos e serviços de saúde perto de você.</p>
+            <h1>Saúde de Tupaciguara</h1>
+            <p>Encontre remédios gratuitos, farmácias abertas e serviços perto de você.</p>
         </section>
 
         <div class="layout">
-            <section class="section wide">
+            <section class="section wide search-section">
                 <form class="card card-blue search-card" action="busca.html" method="get">
                     <label class="search-input" for="home-search">
                         <svg width="16" height="16" aria-hidden="true"><use href="#i-search"/></svg>
@@ -97,36 +86,80 @@
                 </form>
             </section>
 
-            <section class="section">
-                <div class="card card-blue info-card">
-                    <span class="icon-wrap">
-                        <svg width="34" height="34" aria-hidden="true"><use href="#i-bank"/></svg>
+            <section class="section right-stack">
+                <a class="card mini-card mini-municipal" href="busca.html#municipal">
+                    <span class="icon-tile">
+                        <svg width="22" height="22" aria-hidden="true"><use href="#i-bank"/></svg>
                     </span>
                     <h3>Farmácia Municipal</h3>
-                    <p>Medicamentos gratuitos: consulte a lista oficial da prefeitura de Tupaciguara.</p>
-                    <a class="btn btn-white" href="busca.html#municipal">Ver Lista</a>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="card card-green info-card">
-                    <span class="icon-wrap">
-                        <svg width="34" height="34" aria-hidden="true"><use href="#i-hand-heart"/></svg>
+                    <p>Acesse a lista de medicamentos gratuitos da prefeitura.</p>
+                </a>
+                <a class="card mini-card mini-popular" href="busca.html#popular">
+                    <span class="icon-tile">
+                        <svg width="22" height="22" aria-hidden="true"><use href="#i-hand-heart"/></svg>
                     </span>
                     <h3>Farmácia Popular</h3>
-                    <p>Programa federal: remédios gratuitos para asma, diabetes e hipertensão em farmácias credenciadas.</p>
-                    <a class="btn btn-white" href="busca.html#popular">Consultar Benefícios</a>
-                </div>
+                    <p>Remédios gratuitos do Governo Federal em farmácias credenciadas.</p>
+                </a>
             </section>
 
-            <section class="section medium">
-                <div class="card card-navy info-card">
-                    <span class="icon-wrap">
-                        <svg width="34" height="34" aria-hidden="true"><use href="#i-pharmacy"/></svg>
-                    </span>
-                    <h3>Farmácias Abertas</h3>
-                    <p id="open-now-desc">Veja endereços, telefones e horários das farmácias da cidade.</p>
-                    <a class="btn btn-white" href="farmacias.html">Ver Farmácias</a>
+            <section class="section plantao-section">
+                <div class="card plantao-hero">
+                    <header class="plantao-head">
+                        <h2>
+                            <svg width="20" height="20" aria-hidden="true"><use href="#i-pharmacy"/></svg>
+                            Farmácias Abertas Agora
+                        </h2>
+                        <span class="badge" id="plantao-badge" hidden>Aberto Agora</span>
+                    </header>
+                    <div class="plantao-grid">
+                        <a class="plantao-item" href="farmacias.html">
+                            <div class="plantao-thumb thumb-1" aria-hidden="true">
+                                <svg width="36" height="36"><use href="#i-pharmacy"/></svg>
+                            </div>
+                            <h4>Drogaria do Povo I</h4>
+                            <p class="plantao-meta">
+                                <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                                Até 22:00
+                            </p>
+                            <p class="plantao-meta">
+                                <svg width="14" height="14" aria-hidden="true"><use href="#i-pin"/></svg>
+                                Centro
+                            </p>
+                        </a>
+                        <a class="plantao-item" href="farmacias.html">
+                            <div class="plantao-thumb thumb-2" aria-hidden="true">
+                                <svg width="36" height="36"><use href="#i-pharmacy"/></svg>
+                            </div>
+                            <h4>Farmácia Americanas</h4>
+                            <p class="plantao-meta">
+                                <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                                Até 22:00
+                            </p>
+                            <p class="plantao-meta">
+                                <svg width="14" height="14" aria-hidden="true"><use href="#i-pin"/></svg>
+                                Centro
+                            </p>
+                        </a>
+                        <a class="plantao-item" href="farmacias.html">
+                            <div class="plantao-thumb thumb-3" aria-hidden="true">
+                                <svg width="36" height="36"><use href="#i-pharmacy"/></svg>
+                            </div>
+                            <h4>Drogaria Nova Esperança</h4>
+                            <p class="plantao-meta">
+                                <svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>
+                                Até 21:00
+                            </p>
+                            <p class="plantao-meta">
+                                <svg width="14" height="14" aria-hidden="true"><use href="#i-pin"/></svg>
+                                Av. Brasil
+                            </p>
+                        </a>
+                    </div>
+                    <a class="plantao-footer" href="farmacias.html">
+                        <span id="open-now-desc">Veja todas as farmácias da cidade</span>
+                        <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+                    </a>
                 </div>
             </section>
 
@@ -145,7 +178,8 @@
         </div>
 
         <footer class="app-footer">
-            <p>Última atualização: 11/05/2026.</p>
+            <p>Projeto voluntário e independente, sem vínculo com governo ou empresas.</p>
+            <p><a href="info.html#sobre">Saiba mais</a> · Atualizado em 11/05/2026.</p>
         </footer>
 
         <nav class="bottom-nav" aria-label="Navegação principal">
@@ -211,14 +245,18 @@
 
             const count = HOURS.filter(isOpen).length;
             const desc = document.getElementById('open-now-desc');
+            const badge = document.getElementById('plantao-badge');
+
+            if (badge) badge.hidden = count === 0;
+
             if (!desc) return;
 
             if (count === 0) {
-                desc.textContent = 'Nenhuma farmácia atendendo no momento. Veja horários e telefones.';
+                desc.textContent = 'Nenhuma farmácia atendendo agora — veja todas';
             } else if (count === 1) {
-                desc.textContent = '1 farmácia atendendo agora. Veja endereços, telefones e horários.';
+                desc.textContent = '1 farmácia atendendo agora — veja todas';
             } else {
-                desc.textContent = count + ' farmácias atendendo agora. Veja endereços, telefones e horários.';
+                desc.textContent = count + ' farmácias atendendo agora — veja todas';
             }
         })();
     </script>
