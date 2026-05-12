@@ -19,7 +19,8 @@
             const items = card.querySelectorAll('li');
             let visibleCount = 0;
             items.forEach(li => {
-                const match = q === '' || normalize(li.textContent).includes(q);
+                const haystack = normalize(li.textContent + ' ' + (li.dataset.aliases || ''));
+                const match = q === '' || haystack.includes(q);
                 li.hidden = !match;
                 if (match) visibleCount++;
             });
