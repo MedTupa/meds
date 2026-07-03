@@ -635,6 +635,24 @@ body {
 
 .disclaimer strong { color: var(--blue); }
 
+/* ===== Contact card (info page) ===== */
+.contact-card { margin-top: 0.75rem; }
+
+.contact-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    color: var(--ink);
+}
+
+.contact-card p {
+    margin: 0 0 1rem;
+    color: var(--ink-2);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.contact-card .btn-whatsapp { margin-top: 0; }
+
 /* ===== Page title (internal pages) ===== */
 .page-title {
     padding: 1.25rem 1.25rem 0.25rem;
